@@ -1,74 +1,150 @@
 @import 'normalize';
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
 
 button{
-  box-shadow: 0 0 40px 40px #f4b42f inset, 0 0 0 0 #f4b42f;
+  box-shadow: 0 0 40px 40px #FF5733 inset, 0 0 0 0 #FF5733;
   transition: all 150ms ease-in-out;
   color: white;
-  border: 2px solid #f4b42f;
+  border: 2px solid #FF5733;
   border-radius: 50px;
   cursor: pointer;
   padding: 20px 40px;
   text-transform: uppercase;
   &:hover{
-    box-shadow: 0 0 10px 0 #f4b42f inset, 0 0 10px 4px #f4b42f;
-    color: #f4b42f;
+    box-shadow: 0 0 10px 0 #FF5733 inset, 0 0 10px 4px #FF5733;
+    color: #FF5733;
   }
+}
+video{
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -2;
+  
+}
+.logo{
+      height: 80px;
+      width: 80px;
+      padding: 5px 0;
+}
+.dark{
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: calc(100vh - 95px);
+  background-color: black;
+  opacity: 0.7;
 }
 .block{
-  padding: 0 15%;
+  padding: 0 10%;
 }
 .header{
-  & video{
-    // position: absolute;
-    // z-index: -1;
-    width: 100%;
-  }
   &__block{
-    background-color: #f4b42f;
     display: flex;
     justify-content: space-between;
-    padding-bottom: 5px;
-  }
-  &__icon{
-    display: flex;
-    justify-content: end;
     align-items: center;
-    margin-left: 40px;
-    & li{
-      & img{
-        height: 50px;
-        width: 50px;
+    background-color: #900C3F;
+    & img{
+      height: 80px;
+      width: 80px;
+      padding: 5px 0;
+    }
+    &-nav{
+      display: flex;
+      justify-content: end;
+      flex-grow: 2;
+      margin-right: 30px;
+      & li{
+        background-color: #FF5733;
+        margin-left: 30px;
+        padding: 10px;
+        border-radius: 20px;
+        transition: 0.5s;
+        cursor: pointer;
+        &:hover{
+          background-color: #bfc81a;
+        }
       }
     }
-  }
-  &__nav{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-left: auto;
-    & li{
-      padding: 5px;
-      border-radius: 30px;
-      margin-left: 50px;
-      transition-duration: 0.5s;
-      & img{
-        height: 50px;
-        width: 50px;
-      }
-      &:hover{
-        border-bottom: 3px solid white;
-        background-color: black;
-      }
+    &-icons{
+      flex-grow: 0;
+      display: flex;
+      justify-content: end;
     }
   }
   &__info{
-    z-index: 2;
     position: absolute;
-    color: white;
     padding-top: 15%;
+    color: white;
     width: 40%;
+    z-index: 1;
     & p{
-      padding: 35px 0 70px 0;
+      padding: 70px 0;
     }
   }
+}
+.aboutUs{
+  background: linear-gradient(15deg ,#581845,#C70039 );
+  background-size: 250% 250%;
+  animation: grad 3s ease infinite;
+  & h2{
+    font-size: 48px;
+    text-align: center;
+    padding: 30px 0 150px 0;
+  }
+  & img{
+    position: absolute;
+    top: 970px;
+    left: 290px;
+    height: 210px;
+    width: 350px;
+  }
+  &__info{
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 100px;
+    & div{
+      height: 300px;
+      width: 200px;
+      background-color: #FF5733;
+      border-radius: 10px;
+    }
+    & p{
+      background-color: #FF5733;
+      border-radius: 10px;
+    }
+  }
+}
+.socsk{
+  background: url(../img/bgs.png) no-repeat;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  & img{
+    height: 250px;
+  }
+}
+//Задний фон с носочками
+// .er{
+//   z-index: -3;
+//   top: 60%;
+//   left: 0;
+//   position: fixed;
+//   height: 500px;
+//   width: 100%;
+//   background: url(../img/bgs.png) no-repeat;
+//   background-size: 100%;
+// }
+@keyframes grad {
+  0%{
+    background-position: 0 50%;
+}
+50%{
+    background-position: 100% 50%;
+}
+100%{
+    background-position: 0 50%;
+}
 }
